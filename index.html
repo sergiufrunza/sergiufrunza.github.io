@@ -13,7 +13,6 @@
 <meta property="og:description" content="Python backend engineer with 4+ years of experience — FastAPI, Django, Kafka, PostgreSQL, Kubernetes, CI/CD.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sergiufrunza.github.io/">
-<meta property="og:image" content="https://github.com/sergiufrunza.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ro_RO">
 <meta name="twitter:card" content="summary">
@@ -26,13 +25,9 @@
   "email": "mailto:sergiu.frunza120@gmail.com",
   "telephone": "+373 78 496 209",
   "url": "https://sergiufrunza.github.io/",
-  "image": "https://github.com/sergiufrunza.png",
   "address": { "@type": "PostalAddress", "addressLocality": "Chișinău", "addressCountry": "MD" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Technical University of Moldova" },
-  "sameAs": [
-    "https://github.com/sergiufrunza",
-    "https://www.linkedin.com/in/sergiu-frunză"
-  ],
+  "sameAs": ["https://www.linkedin.com/in/sergiu-frunză"],
   "knowsAbout": ["Python", "FastAPI", "Django", "Kafka", "PostgreSQL", "Kubernetes", "Docker", "Redis"]
 }
 </script>
@@ -63,16 +58,19 @@
   <div class="hero">
     <div>
       <div class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">200 OK · shipping to production</span></div>
-      <h1>Sergiu Frunză<br>Python Backend Engineer</h1>
+      <h1>Sergiu Frunză<br><span class="role">Python Backend Engineer</span></h1>
+      <p class="print-contact">sergiu.frunza120@gmail.com · +373 78 496 209 ·
+        linkedin.com/in/sergiu-frunză · Chișinău, Moldova</p>
       <p class="sub" data-i18n="sub"><b>Python engineer</b> with 4+ years of experience building backend
         systems end-to-end — from clean <b>API design</b> to solid <b>data modeling</b>,
         <b>process automation</b> and reliable services in production. Pragmatic engineering
         on FastAPI and Django stacks.</p>
       <div class="hero-links">
         <a class="btn primary" href="mailto:sergiu.frunza120@gmail.com" data-i18n="email_btn">Email me</a>
-        <a class="btn" href="https://github.com/sergiufrunza" target="_blank" rel="noopener">GitHub</a>
+        <button class="btn" type="button" id="printCv" data-i18n="cv_btn">Save CV</button>
         <a class="btn" href="https://www.linkedin.com/in/sergiu-frunză" target="_blank" rel="noopener">LinkedIn</a>
       </div>
+      <p class="kbd-hint" data-i18n="kbd_hint">Press <kbd>⌘</kbd><kbd>K</kbd> to jump anywhere</p>
     </div>
 
     <div class="term" aria-label="Example API response describing Sergiu">
@@ -82,7 +80,7 @@
         <span class="ln t-dim">&nbsp;</span>
         <span class="ln"><span class="t-ok">HTTP/1.1 200 OK</span></span>
         <span class="ln t-dim">content-type: application/json</span>
-        <span class="ln t-dim">x-response-time: 12ms</span>
+        <span class="ln t-dim">x-response-time: <span id="rt">12ms</span></span>
         <span class="ln t-dim">&nbsp;</span>
         <span class="ln t-str">{</span>
         <span class="ln">  <span class="t-key">"name"</span>: <span class="t-str">"Sergiu Frunză"</span>,</span>
@@ -94,6 +92,11 @@
         <span class="ln">  <span class="t-key">"currently"</span>: <span class="t-str">"building data pipelines @ scale"</span></span>
         <span class="ln t-str">}<span class="caret"></span></span>
       </div>
+      <form class="term-input" id="termForm" hidden>
+        <label class="t-ok" for="termIn">$</label>
+        <input id="termIn" autocomplete="off" autocapitalize="off" spellcheck="false"
+               data-i18n-ph="term_ph" placeholder="try: help, skills, cv">
+      </form>
     </div>
   </div>
 
@@ -112,9 +115,9 @@
         </div>
         <ul data-i18n="j_gd">
           <li>Designing crawling, data-collection and statistics services on FastAPI, asyncio and Kafka, running as concurrent workers on Kubernetes.</li>
+          <li>Migrated a service from synchronous Django to <b>async FastAPI</b> to handle high request volume, redesigning structure and business logic.</li>
           <li>Built a <b>providers aggregator</b> consolidating data from multiple external APIs — minimizing API costs by caching and reusing responses across services.</li>
           <li>Developed a <b>continuous website parsing system</b> that scrapes and normalizes content via regex-based rules pipelines.</li>
-          <li>Integrated <b>OCR pipelines</b> (Marker, Docling) extracting text and tables from PDFs and scanned documents.</li>
           <li>Owned deployment via GitLab CI/CD and Kubernetes manifests; tuned Postgres for high-throughput ingestion.</li>
           <li>Built internal <b>dashboards</b> to monitor collection statistics, worker throughput and pipeline health.</li>
         </ul>
@@ -127,8 +130,9 @@
         </div>
         <ul data-i18n="j_milzo">
           <li>Integrated new endpoints and restructured legacy APIs for consistency and maintainability.</li>
+          <li>Built endpoint logic for widgets.</li>
           <li>Optimized database queries, cutting response times on high-traffic endpoints.</li>
-          <li>Built import/export services for structured data exchange with external systems.</li>
+          <li>Ongoing improvement of endpoints and business logic — subscriptions, project creation and management, permissions.</li>
         </ul>
       </div>
 
@@ -138,9 +142,10 @@
           <span class="date" data-i18n="d_profit">Jul 2025 – Sep 2025</span>
         </div>
         <ul data-i18n="j_profit">
-          <li>Migrated a service from synchronous Django to <b>async FastAPI</b> to handle high request volume, redesigning structure and business logic.</li>
           <li>Implemented <b>KYC workflows</b> and integrated <b>cryptocurrency payout systems</b> with secure, reliable transactions.</li>
           <li>Optimized schema design to improve SQL performance and reduce latency.</li>
+          <li>Monitoring and debugging via <b>Portainer</b>.</li>
+          <li>Monitoring and maintaining continuous parsers in <b>Airflow</b>.</li>
         </ul>
       </div>
 
@@ -150,24 +155,26 @@
           <span class="date" data-i18n="d_feb">Feb 2023 – May 2025</span>
         </div>
         <ul data-i18n="j_fs">
-          <li>Built and maintained responsive front-end applications and scalable back-end services and APIs.</li>
+          <li>Built responsive interfaces with <b>HTML, CSS, vanilla JavaScript</b> and <b>Vue</b>.</li>
+          <li>Designed interfaces in <b>Figma</b>.</li>
+          <li>Built <b>lead-capture systems</b> through interactive calculators.</li>
+          <li>Designed and implemented relational and non-relational databases; performance tuning and efficient querying.</li>
           <li>Integrated third-party services — email, Slack alerts, AWS notifications — for monitoring and communication.</li>
-          <li>Designed relational and non-relational databases; performance tuning and efficient querying.</li>
+          <li>Worked across <b>AWS</b> — RDS, CodeBuild, load balancers, CI/CD pipelines, Docker containers, S3 and CloudFront.</li>
           <li>Web scraping and data extraction feeding cleaned data into business workflows.</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="job-top">
-          <h3>Freelance Python Developer</h3>
+          <h3>Python Developer <span>— Freelance</span></h3>
           <span class="date" data-i18n="d_feb">Feb 2023 – May 2025</span>
         </div>
         <ul data-i18n="j_free">
           <li>Built an <b>AI-powered Telegram bot</b> for real-time alerts based on GPT message analysis.</li>
           <li>Developed asynchronous parsers with Playwright and aiohttp across multiple workers.</li>
           <li>Refactored backend services on FastAPI; Dockerized development and deployment.</li>
-          <li>Automated monthly reporting with generated Google Sheets statistics.</li>
-          <li>Built APIs, webhooks and microservices for modular, real-time communication between services.</li>
+          <li>Continuous per-account statistics collection, with creation and semi-real-time updates of financial data in custom <b>Google Sheets</b> tables.</li>
         </ul>
       </div>
 
@@ -176,7 +183,7 @@
           <h3>Python Developer <span>— Medpark</span></h3>
         </div>
         <ul data-i18n="j_medpark">
-          <li>Built a tool for sending messages and emails to Medpark clients.</li>
+          <li>Built an <b>admin dashboard</b> for sending messages and emails to Medpark clients.</li>
         </ul>
       </div>
 
@@ -186,6 +193,8 @@
         </div>
         <ul data-i18n="j_neo">
           <li>AI tool for enriching product data in multiple languages.</li>
+          <li>Consulting on site optimization.</li>
+          <li>The delivered service was deployed on their server.</li>
         </ul>
       </div>
 
@@ -199,12 +208,14 @@
       <span class="resp" data-i18n="resp_skills"><b>200</b> · 7 groups</span>
     </h2>
     <div class="card skills">
+      <p class="legend" data-i18n="sk_legend"><span class="dot-core"></span> core — daily driver
+        <span class="sep">·</span> <span class="dot-fam"></span> working knowledge</p>
       <div class="skill-row"><b>languages</b><div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div></div>
       <div class="skill-row"><b>frameworks</b><div class="tags"><span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">asyncio</span><span class="tag">aiohttp</span><span class="tag">Aiogram</span><span class="tag">Pandas</span><span class="tag">Playwright</span></div></div>
       <div class="skill-row"><b>databases</b><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">MongoDB</span></div></div>
       <div class="skill-row"><b>messaging</b><div class="tags"><span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">Celery</span></div></div>
-      <div class="skill-row"><b>devops</b><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitLab CI/CD</span><span class="tag">GitHub Actions</span><span class="tag">AWS</span><span class="tag">Portainer</span></div></div>
-      <div class="skill-row"><b>tools</b><div class="tags"><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">Lens</span><span class="tag">OpenAI</span><span class="tag">Docling</span><span class="tag">OCR (Marker)</span></div></div>
+      <div class="skill-row"><b>devops</b><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitLab CI/CD</span><span class="tag">AWS</span><span class="tag">Portainer</span></div></div>
+      <div class="skill-row"><b>tools</b><div class="tags"><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">Terminus</span><span class="tag">Lens</span><span class="tag">OpenAI</span></div></div>
       <div class="skill-row"><b>ide / hosting</b><div class="tags"><span class="tag">PyCharm</span><span class="tag">GitLab</span><span class="tag">BitBucket</span></div></div>
     </div>
   </section>
@@ -316,7 +327,6 @@
       <a class="btn primary" href="mailto:sergiu.frunza120@gmail.com">sergiu.frunza120@gmail.com</a>
       <a class="btn" href="tel:+37378496209">+373 78 496 209</a>
       <a class="btn" href="https://www.linkedin.com/in/sergiu-frunză" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/sergiufrunza" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 
@@ -326,6 +336,16 @@
   </footer>
 
 </main>
+
+<div class="palette-wrap" id="palette" hidden>
+  <div class="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+    <input id="palIn" autocomplete="off" spellcheck="false"
+           data-i18n-ph="pal_ph" placeholder="Jump to a section or run a command…">
+    <ul id="palList" role="listbox"></ul>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 
