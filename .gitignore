@@ -21,3 +21,50 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtualenvs
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+
+# Build artifacts
+build/
+dist/
+*.egg
+.eggs/
+*.pyd
+*.pyo
+
+# Logs and reports
+*.log
+*.coverage
+.coverage.*
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.tox/
+.ruff_cache/
+.python-version
+# IDEs
+.idea/
+.project
+.pydevproject
+.ropeproject
+
+# OS
+.DS_Store
+Thumbs.db
+# dotenv
+.env
+*.env
+base.html
+.claude
